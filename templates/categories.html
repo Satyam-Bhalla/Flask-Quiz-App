@@ -1,0 +1,24 @@
+{% extends "basic_template.html" %}
+
+{% block body %}
+
+<div class="container" style="padding-top: 114px;padding-bottom: 114px;">
+       <div class="jumbotron" style="padding: 1rem;">
+	        <div class="content-wrap text-center">
+	            <h1>Trivia Quiz<br><p>Select your Category</p></h1><hr>
+	        </div>
+	        
+	        <div class ="wrap text-center">
+				<ul>
+					{% for i in range(23) %}
+					<a  href="/question/{{category_id[i]}}">{{category[i]}}<br></a>
+					{% endfor %}
+				</ul>
+		<hr>
+			</div>
+	        
+        </div>
+</div>
+
+
+{% endblock %}

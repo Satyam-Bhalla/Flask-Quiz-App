@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}">
+
+
+    <title>Trivia - Login</title>
+  </head>
+  <body style="background-color: rgb(173, 198, 224);">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Trivia</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">Signup</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+
+    <div class="container" style="width: 700px; margin-left: 530px;">
+        <form action="/login" method="post">
+          <div class="form-group">
+            <label style="padding-top: 35px;" for="formGroupExampleInput">Username</label>
+              {{ form.username(class='form-control', placeholder='Username') }}
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Password</label>
+              {{ form.password(class='form-control', placeholder='Password') }}
+          </div>
+          <input class="btn btn-primary" type="submit" value="Login" style="margin-left: 90px">
+        </form>
+    </div>
+    {{ form.csrf_token }}
+    <p style="text-align: center; color: red">{{ msg }}</p>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "basic_template.html" %}
+
+{% block body %}
+
+<div class="container" style="padding-top: 114px;padding-bottom: 114px;">
+       <div class="jumbotron" style="padding: 1rem;">
+	        <div class="content-wrap text-center">
+	            <hr><h3>And the Trivia Quiz begins for </h3><hr><br>
+	            
+	            <form action="/result" method="POST">
+						{% for i in range(10) %}
+						<div class ="container" style="padding-top: 20px;padding-bottom: 20px;">
+							<span>Question {{i+1}}:</span><br>
+							<span>{{quest[i]}}</span><br>
+
+							<input type="radio" name="{{i}}" value="{{options[i][0]}}">{{options[i][0]}}<br>
+							<input type="radio" name="{{i}}" value="{{options[i][1]}}">{{options[i][1]}}<br>
+							<input type="radio" name="{{i}}" value="{{options[i][2]}}">{{options[i][2]}}<br>
+							<input type="radio" name="{{i}}" value="{{options[i][3]}}">{{options[i][3]}}<br>
+						</div>
+						<hr>
+						{% endfor %}
+				<input class="btn btn-primary" type="submit">
+
+				</form>
+				
+	        </div>
+	        
+        </div>
+</div>
+
+
+{% endblock %}

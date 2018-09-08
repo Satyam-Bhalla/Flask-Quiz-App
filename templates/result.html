@@ -1,0 +1,45 @@
+{% extends "basic_template.html" %}
+
+{% block body %}
+
+<div class="container" style="padding-top: 114px;padding-bottom: 114px;">
+       <div class="jumbotron" style="padding: 1rem;">
+	        <div class="content-wrap text-center">
+	            <h2>Your Result:- {{count}}/10</h2>
+	            <h3>{{msg}}</h3>
+	            <hr>
+	        </div>
+	        
+	        <div class ="wrap text-center">
+				
+	        	<table class="table">
+					  <thead class="thead-dark">
+					    <tr>
+					      <th scope="col">Question No</th>
+					      <th scope="col">Your Answer</th>
+					      <th scope="col">Correct Answer</th>
+					    </tr>
+					  </thead>
+					  <tbody>
+					    {% for i in range(10) %}
+
+							<tr>
+								<th scope="row">{{i+1}}</th>
+								<th scope="row">{{given_ans[i]}}</th>
+								<th scope="row">{{correct_ans[i]}}</th>
+							</tr>
+							
+						{% endfor %}
+					  </tbody>
+				</table>
+			</div> 
+			<hr>
+			<div class="jumbotron" style="padding: 1rem;">
+				<h3 style="text-align: center;">The Graph showing no of correct answers:</h3><br>
+				{{ div_placeholder }}				
+			</div>
+			<hr>
+				        
+        </div>
+</div>
+{% endblock %}
