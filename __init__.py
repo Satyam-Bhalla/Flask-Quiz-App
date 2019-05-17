@@ -16,8 +16,8 @@ from plotly.graph_objs import Scatter
 # Initializing global variables
 app = Flask(__name__)
 app.config['SECRET_KEY']= 'confidential'
-client = MongoClient("mongodb://***********************")
-db = client['trivia_quiz']
+client = MongoClient("mongodb://user:user123@ds145146.mlab.com:45146/quiz-app")
+db = client['quiz-app']
 users = db.users
 
 
